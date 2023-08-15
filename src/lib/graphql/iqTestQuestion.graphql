@@ -1,0 +1,10 @@
+fragment IqTestQuestionFields on IqTestQuestion {
+  __typename
+  sys {
+    id
+  }
+  title
+  question { json }
+  correctAnswer
+  explanation { json }
+}

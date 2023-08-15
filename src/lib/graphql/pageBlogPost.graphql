@@ -41,6 +41,7 @@ fragment PageBlogPostFields on PageBlogPost {
     links {
       entries {
         block {
+          ...IqTestQuestionFields
           ...RichImageFields
         }
       }
