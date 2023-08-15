@@ -4,13 +4,15 @@ interface QuestionProps {
   question: IqTestQuestion;
 }
 
-const getP = info =>
-  info?.json?.content.map((item, index) => <p key={index}>{item.content.map(i => i.value)}</p>);
+const getP = (info, key) =>
+  info?.json?.content.map((item, index) => (
+    <p key={index + key}>{item.content.map(i => i.value)}</p>
+  ));
 
 export const Question = ({ question }: QuestionProps) => {
   const title = question?.title;
-  const explanation = getP(question?.explanation);
-  const questionText = getP(question?.question);
+  const explanation = getP(question?.explanation, 'explanation');
+  const questionText = getP(question?.question, 'question');
   const correctAnswer = question?.correctAnswer;
 
   return (
