@@ -5,8 +5,18 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-B0S6ZDL6QL" />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-B0S6ZDL6QL');
+          `}
+        </Script>
         <Script
-          id="show-banner"
+          id="googletagmanager"
           dangerouslySetInnerHTML={{
             __html: `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
