@@ -28,10 +28,10 @@ const App = ({ Component, pageProps }: AppProps) => {
           id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `<script>window.dataLayer = window.dataLayer || [];
+            __html: `window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-B0S6ZDL6QL');</script>`,
+            gtag('config', 'G-B0S6ZDL6QL');`,
           }}
         />
         <main className={`${urbanist.variable} font-sans`}>
