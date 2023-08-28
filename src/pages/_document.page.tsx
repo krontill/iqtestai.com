@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-B0S6ZDL6QL" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-B0S6ZDL6QL" />
         <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
