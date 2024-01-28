@@ -12,11 +12,13 @@ interface ArticleHeroProps {
   article: PageBlogPostFieldsFragment;
   isFeatured?: boolean;
   isReversedLayout?: boolean;
+  isHideDate?: boolean;
 }
 export const ArticleHero = ({
   article,
   isFeatured,
   isReversedLayout = false,
+  isHideDate,
 }: ArticleHeroProps) => {
   const { t } = useTranslation();
   const inspectorProps = useContentfulInspectorMode({ entryId: article.sys.id });
@@ -59,7 +61,7 @@ export const ArticleHero = ({
             )}
             {...inspectorProps({ fieldId: 'publishedDate' })}
           >
-            <FormatDate date={publishedDate} />
+            {!isHideDate && <FormatDate date={publishedDate} />}
           </div>
         </div>
         <h1 {...inspectorProps({ fieldId: 'title' })}>{title}</h1>
@@ -72,7 +74,7 @@ export const ArticleHero = ({
           className={twMerge('mt-2 text-xs text-gray600', isReversedLayout ? 'lg:hidden' : '')}
           {...inspectorProps({ fieldId: 'publishedDate' })}
         >
-          <FormatDate date={publishedDate} />
+          {!isHideDate && <FormatDate date={publishedDate} />}
         </div>
       </div>
     </div>

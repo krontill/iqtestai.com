@@ -25,7 +25,7 @@ const Page = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       {page.seoFields && <SeoFields {...page.seoFields} />}
       <Container>
         <Link href={`/${page.featuredBlogPost.slug}`}>
-          <ArticleHero article={page.featuredBlogPost} />
+          <ArticleHero article={page.featuredBlogPost} isHideDate />
         </Link>
       </Container>
 
